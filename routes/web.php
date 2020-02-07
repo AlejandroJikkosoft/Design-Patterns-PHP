@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,15 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::name('FactoryMethod.')->group(function () {
+    Route::get('factorymethod', 'FactoryMethodController@index');
+
+    Route::get('factorymethod/conceptual', 'FactoryMethodController@conceptual')
+        ->name('Conceptual');
+
+    Route::get('factorymethod/realworld', 'FactoryMethodController@realWorld')
+        ->name('RealWorld');
 });
