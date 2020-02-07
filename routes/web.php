@@ -27,3 +27,13 @@ Route::name('FactoryMethod.')->group(function () {
     Route::get('factorymethod/realworld', 'FactoryMethodController@realWorld')
         ->name('RealWorld');
 });
+
+Route::name('AbstractFactory.')->group(function () {
+    Route::get('abstractfactory', 'AbstractFactoryController@index');
+
+    Route::get('abstractfactory/conceptual', 'AbstractFactoryController@conceptual')
+        ->name('Conceptual');
+
+    Route::get('abstractfactory/realworld', 'AbstractFactoryController@realWorld')
+        ->name('RealWorld');
+});
