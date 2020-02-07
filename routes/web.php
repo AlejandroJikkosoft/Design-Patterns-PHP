@@ -17,4 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/factoryMethod', 'FactoryMethodController@index');
+
+Route::name('FactoryMethod.')->group(function () {
+    Route::get('factorymethod', 'FactoryMethodController@index');
+
+    Route::get('factorymethod/conceptual', 'FactoryMethodController@conceptual')
+        ->name('Conceptual');
+
+    Route::get('factorymethod/realworld', 'FactoryMethodController@realWorld')
+        ->name('RealWorld');
+});
